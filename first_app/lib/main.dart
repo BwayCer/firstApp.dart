@@ -30,11 +30,23 @@ class HomePage extends StatelessWidget {
       body: new Center(
         child: new Container(
           margin: const EdgeInsets.only(left: 20.0, right: 20.0),
-          child: new Text(
-            '首頁',
-            style: new TextStyle(
-              fontSize: 48.0,
-            ),
+          child: new Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              new Container(
+                height: 128.0,
+                child: new Image.asset('assets/mmsetting/password.png'),
+              ),
+              new Padding(padding: const EdgeInsets.only(top: 5.0)),
+              new Text(
+                'Icon made by prettycons from www.flaticon.com',
+                style: new TextStyle(
+                  fontSize: 10.0,
+                  color: Colors.brown,
+                ),
+              ),
+            ],
           ),
         ),
       ),
@@ -68,16 +80,12 @@ class HomePage extends StatelessWidget {
 }
 
 class ApDrawer extends StatelessWidget {
-  List<dynamic> _apXxx;
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('鍵值表'),
       ),
-      // TODO 不能加 new
-      // body: (_apXxx?.isEmpty ?? true) ? emptyNotFound() : showData(),
       body: emptyNotFound(),
     );
   }
@@ -86,10 +94,28 @@ class ApDrawer extends StatelessWidget {
     return new Center(
       child: new Container(
         margin: const EdgeInsets.only(left: 20.0, right: 20.0),
-        child: new Text(
-          '未有任何資料',
-          style: new TextStyle(
-            fontSize: 20.0,
+        child: new Container(
+          margin: const EdgeInsets.only(left: 20.0, right: 20.0),
+          child: new Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              new Image.asset('assets/mmsetting/not-found.png'),
+              new Padding(padding: const EdgeInsets.only(top: 5.0)),
+              new Text(
+                'Icon made by Freepik from www.flaticon.com',
+                style: new TextStyle(
+                  fontSize: 10.0,
+                  color: Colors.brown,
+                ),
+              ),
+              new Text(
+                '未有任何資料',
+                style: new TextStyle(
+                  fontSize: 20.0,
+                ),
+              ),
+            ],
           ),
         ),
       ),
