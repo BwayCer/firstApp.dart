@@ -7,6 +7,7 @@ class Vul354 {
 
   Future<List> readApXxx() {
     return rootBundle.loadString(this.apPath).then((String fileContents) {
+      // TODO 也可以是 ? this.apXxx = jsonDecode(fileContents);
       apXxx = jsonDecode(fileContents);
       // print('${apXxx.runtimeType}: ${apXxx}');
       return apXxx;

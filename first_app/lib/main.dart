@@ -6,10 +6,43 @@ void main() {
   runApp(new MyApp());
 }
 
+void devRun() async {
+  // import 'dart:async';
+  // new Timer(Duration(milliseconds: 1000), () {
+  //   print('MyApp#build() - 計時器');
+  // });
+
+  Future<List> readApXxx() async {
+    return Future.delayed(Duration(milliseconds: 999), () {
+      apXxx = jsonDecode(apJsopTxt);
+      return apXxx;
+    });
+  }
+
+  // dynamic map(fn(String choA, String choB, Map<String, dynamic> choC), String a) {
+  //   for (var idx = 0, len = this._apXxx.length; idx < len; idx++) {
+  //     var item = this._apXxx[idx];
+  //     String name = item[0];
+  //     String description = item[1];
+  //     Map<String, dynamic> detail = item[2];
+
+  //     var rtnItem = fn(name, description, detail);
+  //     print('${rtnItem.runtimeType}: ${rtnItem}');
+
+  //     // print('$itemName: $itemDescribe');
+  //     // for (var key in itemInfo.keys) {
+  //     //   print('$key: ${item[key]}');
+  //     // }
+  //   }
+  //   return 'null';
+  // }
+}
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     print('MyApp#build() - 初始化及熱重載時執行');
+    devRun();
 
     return MaterialApp(
       // `title` 沒什麼用的意思
