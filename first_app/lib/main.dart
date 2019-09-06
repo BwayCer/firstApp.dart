@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'vul354/vul354.dart';
 
 void main() {
   print('main() - 初始化時執行');
@@ -79,14 +80,34 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class ApDrawer extends StatelessWidget {
+class ApDrawer extends StatefulWidget {
+  @override
+  createState() => new ApDrawerState();
+}
+
+class ApDrawerState extends State<ApDrawer> {
+  final vul354 = new Vul354();
+  List<dynamic> _apXxx;
+
+  void updateApXxx(List<dynamic> newApXxx) {
+    setState(() {
+      _apXxx = newApXxx;
+    });
+  }
+
+  ApDrawerState() {
+    vul354.readApXxx().then((List<dynamic> data) {
+      updateApXxx(data);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('鍵值表'),
       ),
-      body: emptyNotFound(),
+      body: (_apXxx?.isEmpty ?? true) ? emptyNotFound() : showData(),
     );
   }
 
@@ -119,6 +140,27 @@ class ApDrawer extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  Widget showData() {
+    return new ListView.builder(
+      itemBuilder: (context, idx) {
+        List<dynamic> item = _apXxx[idx];
+        String name = item[0];
+        // String description = item[1];
+        Map<String, dynamic> detail = item[2];
+
+        return ExpansionTile(
+          title: new Text(name),
+          children: detail.keys.map((key) {
+            return new ListTile(
+              title: new Text('$key :  ${detail[key]}'),
+            );
+          }).toList(),
+        );
+      },
+      itemCount: _apXxx.length,
     );
   }
 }
