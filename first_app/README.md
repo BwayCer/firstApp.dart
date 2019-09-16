@@ -19,3 +19,11 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
+
+
+## 紀錄程式容量
+
+
+* `10676 (10.4MB) - a06a1e7 增補 flutter create "first_app" (Flutter v1.10.3)`
+* ` 8456 ( 8.3MB) - e4c80dd 增補 最簡化空白程式`
+
