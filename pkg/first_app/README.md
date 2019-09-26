@@ -26,4 +26,6 @@ samples, guidance on mobile development, and a full API reference.
 
 
 * `10280 (10.0MB) - fe70e0e 增補 flutter create "first_app" (Flutter v1.10.7)`
+* ` 8068 ( 7.9MB) - e9eec66 增補 最簡化程式 Hello World!`
+* ` 9016 ( 8.8MB) - e798520 增補 圖形介面 Hello World!`
 
