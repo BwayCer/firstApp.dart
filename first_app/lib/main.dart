@@ -56,7 +56,8 @@ class HomePage extends StatelessWidget {
         child: Container(
           height: 60.0,
           color: Colors.yellow,
-          child: new RaisedButton(
+          child: new ElevatedButton(
+            style: TextButton.styleFrom(primary: Colors.blue),
             child: new Text(
               '進入',
               style: new TextStyle(
@@ -66,7 +67,6 @@ class HomePage extends StatelessWidget {
                 letterSpacing: 2.0,
               ),
             ),
-            color: Colors.blue,
             onPressed: () => Navigator.push(
               context,
               new MaterialPageRoute(
