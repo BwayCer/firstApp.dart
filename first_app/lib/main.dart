@@ -87,7 +87,7 @@ class ApDrawer extends StatefulWidget {
 
 class ApDrawerState extends State<ApDrawer> {
   final vul354 = new Vul354();
-  List<dynamic> _apXxx;
+  List<dynamic> _apXxx = [];
 
   void updateApXxx(List<dynamic> newApXxx) {
     setState(() {
@@ -107,7 +107,7 @@ class ApDrawerState extends State<ApDrawer> {
       appBar: new AppBar(
         title: new Text('鍵值表'),
       ),
-      body: (_apXxx?.isEmpty ?? true) ? emptyNotFound() : showData(),
+      body: (_apXxx.isEmpty ?? true) ? emptyNotFound() : showData(_apXxx),
     );
   }
 
@@ -143,10 +143,10 @@ class ApDrawerState extends State<ApDrawer> {
     );
   }
 
-  Widget showData() {
+  Widget showData(List<dynamic> apXxx) {
     return new ListView.builder(
       itemBuilder: (context, idx) {
-        List<dynamic> item = _apXxx[idx];
+        List<dynamic> item = apXxx[idx];
         String name = item[0];
         // String description = item[1];
         Map<String, dynamic> detail = item[2];
@@ -160,7 +160,7 @@ class ApDrawerState extends State<ApDrawer> {
           }).toList(),
         );
       },
-      itemCount: _apXxx.length,
+      itemCount: apXxx.length,
     );
   }
 }
